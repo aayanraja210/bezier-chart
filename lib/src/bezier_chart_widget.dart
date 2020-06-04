@@ -1152,6 +1152,8 @@ class _BezierChartPainter extends CustomPainter {
 
       _AxisValue lastPoint;
 
+      double lastValue = 0;
+
       //display each data point
       for (int i = 0; i < xAxisDataPoints.length; i++) {
         double value = 0.0;
@@ -1174,7 +1176,6 @@ class _BezierChartPainter extends CustomPainter {
           value = line.data[i].value;
         } else {
           //search from axis
-          double lastValue = 0;
           for (DataPoint<DateTime> dp in line.data) {
             final dateTime = (xAxisDataPoints[i].xAxis as DateTime);
 
